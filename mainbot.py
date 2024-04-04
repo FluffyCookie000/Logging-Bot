@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from variables import module
 from variables.other import fluffbotdr, botonlinestatus, FluffyCookie
 import discord
-import json
 import os
 import sys
 
