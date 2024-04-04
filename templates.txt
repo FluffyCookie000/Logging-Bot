@@ -1,0 +1,55 @@
+        #TEMPLATES
+
+#                       EMBED
+
+#@bot.command()
+#async def template(ctx):
+#    embed=discord.Embed(title="", url="", description="", color=0xa38171)
+#    embed.set_author(name="FluffyCookie000", url="https://twitter.com/FluffyCookie000", icon_url="https://cdn.discordapp.com/attachments/998067191020798042/1004797156407918682/20220731_104028.jpg?size=4096")
+#    embed.set_thumbnail(url="")
+#    embed.add_field(name="", value="", inline=)
+#    embed.add_field(name="", value="", inline=)
+#    embed.add_field(name="", value="", inline=)
+#    embed.add_field(name="", value="", inline=)
+#    embed.add_field(name="", value="", inline=)
+#    embed.set_image(url="")
+#    embed.set_footer(text="", icon_url="")
+#    await ctx.send(embed=embed)
+
+
+
+#                       USER/SERVER SPECIFIC COMMANDS
+
+#               SERVER SPECIFIC
+
+# @bot.command()
+# async def template(ctx):
+#     if ctx.guild.id == :
+        
+#     else:
+
+#                USER SPECIFIC
+
+# @bot.command()
+# async def template(ctx):
+#     if ctx.author.id == :
+
+#     else
+
+                COG
+
+from discord.ext import commands
+
+class here(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        print("here initialized")
+
+def setup(bot):
+    bot.add_cog(here(bot))
+
+    @commands.command()
+    async def time(self, ctx):
+        now = DT.now()
+        current_time = now.strftime("%H:%M:%S") 
+        await ctx.send("{}".format(current_time))
