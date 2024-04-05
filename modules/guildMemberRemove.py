@@ -1,6 +1,6 @@
 from datetime import datetime as DT
 from discord.ext import commands
-from variables.other import loggingchannels
+
 import datetime
 import discord
 import json

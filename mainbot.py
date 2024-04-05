@@ -3,7 +3,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 # from git import Repo
 from variables import module
-from variables.other import fluffbotdr, botonlinestatus, FluffyCookie
 import discord
 import os
 import sys
@@ -19,14 +18,14 @@ nonmodules = []
 async def on_ready():
     print(f"{bot.user} ({bot.user.id}) is online\nTime at start: {bot.currentTime}\nTime to start: " + str((DT.now() - bot.startTime)))
     await bot.change_presence(activity=discord.Game(name="On My Terminal"))
-    channel = bot.get_channel(botonlinestatus) #bot-online-status(bot testing)
+    channel = bot.get_channel(998067191020798042) #bot-online-status(bot testing)
     await channel.send("[LOGGING] Im Alive!")
 
 
 
 @bot.command()
 async def loggit(ctx, type = None):
-    if ctx.author.id != FluffyCookie:
+    if ctx.author.id != 557286947106586627:
         return
     if type == "pull" or type is None:
         os.chdir(gitdr)
@@ -41,21 +40,21 @@ async def loggit(ctx, type = None):
 
 @bot.command()
 async def logreload(ctx, extension):
-    if ctx.author.id == FluffyCookie: 
+    if ctx.author.id == 557286947106586627: 
         await extenstion_reload(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
 
 @bot.command()
 async def logload(ctx, extension):
-    if ctx.author.id == FluffyCookie: 
+    if ctx.author.id == 557286947106586627: 
         await extenstion_load(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
 
 @bot.command()
 async def logunload(ctx, extension):
-    if ctx.author.id == FluffyCookie: 
+    if ctx.author.id == 557286947106586627: 
         await extenstion_unload(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
