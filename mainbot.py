@@ -7,7 +7,7 @@ import discord
 import os
 import sys
 
-#hi
+
 
 load_dotenv()
 bot = commands.Bot(command_prefix=['dev '.casefold()], intents=discord.Intents.all(), help_command=None)
