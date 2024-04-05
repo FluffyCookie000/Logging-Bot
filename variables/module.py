@@ -20,7 +20,6 @@ main = [
     'interactionCreate',
     'inviteCreate',
     'inviteDelete',
-    'logging',
     'messageCreate',
     'messageDelete',
     'messageDeleteBulk',
