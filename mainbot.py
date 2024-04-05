@@ -1,7 +1,7 @@
 from datetime import datetime as DT
 from discord.ext import commands
 from dotenv import load_dotenv
-# from git import Repo
+from git import Repo
 from variables import module
 import discord
 import os
