@@ -15,7 +15,7 @@ bot.startTime = DT.now()
 bot.currentTime = DT.now()
 nonmodules = []
 
-@bot.event()
+@bot.event
 async def on_ready():
     print(f"{bot.user} ({bot.user.id}) is online\nTime at start: {bot.currentTime}\nTime to start: " + str((DT.now() - bot.startTime)))
     await bot.change_presence(activity=discord.Game(name="On My Terminal"))
