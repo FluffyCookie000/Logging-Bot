@@ -25,13 +25,19 @@ async def on_ready():
 
 
 @bot.command()
-async def logrestart(ctx):
+async def loggit(ctx, type = None):
     if ctx.author.id != FluffyCookie:
         return
-    await ctx.send("restarting")
-    print('restarting')
-    os.chdir(fluffbotdr)
-    os.execv(sys.executable, [f'python'] + sys.argv)
+    if type == "pull" or type is None:
+        os.chdir(gitdr)
+        try:
+            repo = Repo('/.git')
+            origin = repo.remote('origin')
+            origin.pull()
+            await ctx.send('git pulled')
+            print('git pulled')
+        except:
+            await ctx.send("an error occured")
 
 @bot.command()
 async def logreload(ctx, extension):
@@ -41,14 +47,14 @@ async def logreload(ctx, extension):
         await ctx.send("unknown command.")
 
 @bot.command()
-async def load(ctx, extension):
+async def logload(ctx, extension):
     if ctx.author.id == FluffyCookie: 
         await extenstion_load(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
 
 @bot.command()
-async def unload(ctx, extension):
+async def logunload(ctx, extension):
     if ctx.author.id == FluffyCookie: 
         await extenstion_unload(ctx, 'modules', extension)
     else:
