@@ -10,12 +10,12 @@ import sys
 
 
 load_dotenv()
-bot = commands.Bot(command_prefix=['lfluff', 'lFluff'], intents=discord.Intents.all(), help_command=None)
+bot = commands.Bot(command_prefix=['fluff ', 'Lfluff '], intents=discord.Intents.all(), help_command=None)
 bot.startTime = DT.now()
 bot.currentTime = DT.now()
 nonmodules = []
 
-@bot.event
+@bot.event()
 async def on_ready():
     print(f"{bot.user} ({bot.user.id}) is online\nTime at start: {bot.currentTime}\nTime to start: " + str((DT.now() - bot.startTime)))
     await bot.change_presence(activity=discord.Game(name="On My Terminal"))
@@ -25,7 +25,7 @@ async def on_ready():
 
 
 @bot.command()
-async def loggit(ctx, type = None):
+async def git(ctx, type = None):
     if ctx.author.id != 557286947106586627:
         return
     if type == "pull" or type is None:
@@ -39,21 +39,21 @@ async def loggit(ctx, type = None):
             await ctx.send("an error occured")
 
 @bot.command()
-async def logreload(ctx, extension):
+async def reload(ctx, extension):
     if ctx.author.id == 557286947106586627: 
         await extenstion_reload(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
 
 @bot.command()
-async def logload(ctx, extension):
+async def load(ctx, extension):
     if ctx.author.id == 557286947106586627: 
         await extenstion_load(ctx, 'modules', extension)
     else:
         await ctx.send("unknown command.")
 
 @bot.command()
-async def logunload(ctx, extension):
+async def unload(ctx, extension):
     if ctx.author.id == 557286947106586627: 
         await extenstion_unload(ctx, 'modules', extension)
     else:
