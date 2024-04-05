@@ -28,7 +28,6 @@ async def loggit(ctx, type = None):
     if ctx.author.id != 557286947106586627:
         return
     if type == "pull" or type is None:
-        os.chdir(gitdr)
         try:
             repo = Repo('/.git')
             origin = repo.remote('origin')
