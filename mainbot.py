@@ -30,7 +30,7 @@ async def loggit(ctx, type = None):
         return
     if type == "pull" or type is None:
         try:
-            repo = Repo('/.git')
+            repo = Repo('.git')
             origin = repo.remote('origin')
             origin.pull()
             await ctx.send('git pulled')
