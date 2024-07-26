@@ -10,7 +10,7 @@ import sys
 
 
 load_dotenv()
-bot = commands.Bot(command_prefix=['fluff ', 'Lfluff '], intents=discord.Intents.all(), help_command=None)
+bot = commands.Bot(command_prefix=['lfluff ', 'Lfluff '], intents=discord.Intents.all(), help_command=None)
 bot.startTime = DT.now()
 bot.currentTime = DT.now()
 nonmodules = []
